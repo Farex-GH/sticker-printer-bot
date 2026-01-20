@@ -188,8 +188,10 @@ void Bot::InitBot()
         }
 
 
-        // Make the printing async, because the next message won't be processed
-        // until this function returns.
+        /*
+         * Make the printing async, because the next message won't be processed
+         * until this function returns.
+         */
         std::thread t(&Bot::PrintStickersAsync, this, file_paths, message);
         t.detach();
     });
